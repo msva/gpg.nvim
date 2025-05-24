@@ -1,3 +1,7 @@
+<a href="https://dotfyle.com/plugins/benoror/gpg.nvim">
+  <img src="https://dotfyle.com/plugins/benoror/gpg.nvim/shield" />
+</a>
+
 # gpg.nvim
 
 Editing GPG encrypted files symmetrically in NeoVIM
