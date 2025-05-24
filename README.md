@@ -9,7 +9,6 @@ Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 ```lua
 {
    "benoror/gpg.nvim",
-   opts = {}
 }
 ```
 
