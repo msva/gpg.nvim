@@ -6,6 +6,8 @@
 
 Editing GPG encrypted files symmetrically in NeoVIM
 
+![Demo](https://github.com/user-attachments/assets/2127cbe4-4199-4d0f-b9a3-b94798184cae)
+
 ## Install
 
 Using [lazy.nvim](https://github.com/folke/lazy.nvim):
