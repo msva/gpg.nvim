@@ -4,7 +4,7 @@ Editing GPG encrypted files symmetrically in NeoVIM
 
 ## Install
 
-LazyVim
+Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
 {
@@ -12,6 +12,15 @@ LazyVim
    opts = {}
 }
 ```
+
+## Requirements
+
+- `gpg`
+- Optional: `pinentry-mac`
+
+## Usage
+
+All `*.gpg` files will be symmetrically decrypted/encrypted transparently using `gpg` tools
 
 ## Credits
 
@@ -25,3 +34,7 @@ LazyVim
 ### Inspired by
 
 https://github.com/jamessan/vim-gnupg
+
+## Further reading
+
+- [Setup GPG on macOS](https://dev.to/zemse/setup-gpg-on-macos-2iib)
