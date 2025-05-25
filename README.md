@@ -10,9 +10,14 @@ Editing GPG encrypted files symmetrically in NeoVIM
 
 ## Install
 
-Using [lazy.nvim](https://github.com/folke/lazy.nvim):
+### Manually
+
+Copy [`plugin/gpg.lua`](https://github.com/benoror/gpg.nvim/blob/main/plugin/gpg.lua) file to your `~/.config/nvim/lua/plugins/` directory
+
+### Using [lazy.nvim](https://github.com/folke/lazy.nvim):
 
 ```lua
+-- ~/.config/nvim/lua/plugins/gpg.lua
 {
    "benoror/gpg.nvim",
 }
