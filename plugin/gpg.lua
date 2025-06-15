@@ -21,7 +21,7 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "FileReadPost" }, {
   pattern = "*.gpg",
   group = gpgGroup,
   callback = function()
-    vim.cmd "'[,']!gpg --decrypt 2> /dev/null"
+    vim.cmd "silent! '[,']!gpg --decrypt 2> /dev/null"
 
     -- Switch to normal mode for editing
     vim.opt_local.bin = false
@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "FileReadPost" }, {
 vim.api.nvim_create_autocmd({ "BufWritePre", "FileWritePre" }, {
   pattern = "*.gpg",
   group = gpgGroup,
-  command = "'[,']!gpg --default-recipient-self -ae 2>/dev/null",
+  command = "silent! '[,']!gpg --default-recipient-self -ae 2>/dev/null",
 })
 -- Undo the encryption so we are back in the normal text, directly
 -- after the file has been written.
