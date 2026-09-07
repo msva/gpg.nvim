@@ -42,14 +42,24 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "FileReadPost" }, {
 vim.api.nvim_create_autocmd({ "BufWritePre", "FileWritePre" }, {
   pattern = "*.gpg",
   group = gpgGroup,
-  command = "silent! '[,']!gpg --default-recipient-self -ae 2>/dev/null",
+  callback = function()
+    vim.b.curpos = vim.api.nvim_win_get_cursor(0)
+    vim.cmd[[silent! '[,']!gpg --default-recipient-self -ae 2>/dev/null]]
+  end,
+  -- command = "silent! '[,']!gpg --default-recipient-self -ae 2>/dev/null",
 })
 -- Undo the encryption so we are back in the normal text, directly
 -- after the file has been written.
 vim.api.nvim_create_autocmd({ "BufWritePost", "FileWritePost" }, {
   pattern = "*.gpg",
   group = gpgGroup,
-  command = "u",
+  callback = function()
+    vim.cmd[[u]]
+    if vim.b.curpos and #vim.b.curpos > 0 then
+      vim.api.nvim_win_set_cursor(0, vim.b.curpos)
+    end
+  end,
+  -- command = "u",
 })
 
 -- Return an empty table to satisfy plugin loader requirements
